@@ -4,7 +4,7 @@ import search from "../../public/Search.svg";
 export default function SearchBox() {
   return (
     <div className="p-8">
-      <div className="bg-white flex h-16 items-center rounded-3xl shadow-xl">
+      <div className="bg-white flex h-16 items-center rounded-3xl">
         <input
           className="rounded-l-full w-auto py-4 px-6 text-gray-700 leading-tight focus:outline-none"
           id="search"

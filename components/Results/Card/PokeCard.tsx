@@ -1,3 +1,4 @@
+import { useRouter } from "next/dist/client/router";
 import Image from "next/image";
 
 interface Props {
@@ -5,8 +6,12 @@ interface Props {
 }
 
 export default function PokeCard({ data }: Props) {
+  const router = useRouter();
   return (
-    <div className="w-56 h-60 p-4 bg-gray-900 hover:bg-opacity-40 m-8 rounded-lg overflow-hidden shadow-lg">
+    <div
+      className="w-56 h-60 p-4 bg-gray-900 hover:bg-opacity-40 m-8 rounded-lg overflow-hidden shadow-lg"
+      onClick={() => router.push(`/pokemon/${data.name}`)}
+    >
       <Image
         className="w-full text-white hover:rotate-12"
         height={100}
