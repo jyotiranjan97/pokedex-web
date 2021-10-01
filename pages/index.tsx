@@ -1,4 +1,6 @@
 import Head from "next/head";
+import Results from "../components/Results/Results";
+import SearchBox from "../components/SearchBox/SearchBox";
 
 export default function Home() {
   return (
@@ -12,9 +14,11 @@ export default function Home() {
         <h2 className="text-4xl font-bold tracking-wider text-gray-900 dark:text-white">
           Pok&#233;dex
         </h2>
+        <SearchBox />
+        <Results />
       </main>
 
-      <footer className="flex items-center justify-center w-full h-24 border-t">
+      <footer className="flex items-center justify-center w-full h-20 border-t">
         <p className="text-sm tracking-wider font-semibold text-gray-700 dark:text-white">
           All rights reserved by{" "}
           <a href="https://pokeapi.co/" target="_blank">
