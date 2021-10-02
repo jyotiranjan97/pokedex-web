@@ -9,9 +9,9 @@ export const fetchAllPokemons = async () => {
       index + 1
     }.svg`;
     return {
-      pokeIndex,
+      id: pokeIndex,
       ...result,
-      pokeImage,
+      image: pokeImage,
     };
   });
   return pokemons;
@@ -26,9 +26,9 @@ export const fetchMorePokemons = async (offset: number) => {
       index + 1 + offset
     }.svg`;
     return {
-      pokeIndex,
+      id: pokeIndex,
       ...result,
-      pokeImage,
+      image: pokeImage,
     };
   });
   return pokemons;

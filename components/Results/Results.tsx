@@ -7,7 +7,7 @@ interface Props {
 
 export default function Results({ pokemons }) {
   const results = pokemons.map((pokemon) => (
-    <PokeCard key={pokemon.pokeIndex} data={pokemon} />
+    <PokeCard key={pokemon.id} data={pokemon} />
   ));
   return (
     <div className="flex flex-wrap justify-center my-2 h-4/5 md:w-11/12">
