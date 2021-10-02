@@ -5,13 +5,14 @@ import Defense from "../../public/Defense.svg";
 import Speed from "../../public/Speed.svg";
 import Height from "../../public/Height.svg";
 import Weight from "../../public/Weight.svg";
+import { color } from "../../assets/colorsByType";
 
 export default function PokeStatsCard({ pokeData }) {
   const typeOfPokemon = pokeData.type.map((type, index) => (
-    <div className="px-6 pt-4 pb-2" key={index}>
+    <div className="px-6 pt-2 pb-1" key={index}>
       <span
-        className="inline-block bg-green-700 rounded-full px-3 py-1 
-                text-sm tracking-wide font-semibold text-white mr-2 mb-2"
+        className={`inline-block ${color[type]} rounded-full px-3 py-1 
+                text-sm tracking-wide font-semibold text-black`}
       >
         {type}
       </span>
@@ -31,7 +32,11 @@ export default function PokeStatsCard({ pokeData }) {
         <h5 className="text-white text-3xl font-mono">
           {pokeData.name.charAt(0).toUpperCase() + pokeData.name.slice(1)}
         </h5>
-        <div className="flex flex-row justify-evenly md:my-10 flex-wrap">
+        {/**Falling Types */}
+        <div className="flex flex-row md:my-3 justify-center">
+          {typeOfPokemon}
+        </div>
+        <div className="flex flex-row justify-evenly flex-wrap">
           {/** Attributes */}
           <div className="flex flex-col self-center justify-evenly my-2 max-w-xl">
             {/** Height */}
