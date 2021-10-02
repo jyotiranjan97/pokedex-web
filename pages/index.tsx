@@ -19,15 +19,6 @@ export default function Home({ pokemons }) {
         <SearchBox />
         <Results pokemons={pokemons} />
       </main>
-
-      <footer className="flex items-center justify-center w-full h-20 border-t">
-        <p className="text-sm tracking-wider font-semibold text-gray-700 dark:text-white">
-          All rights reserved by{" "}
-          <a href="https://pokeapi.co/" target="_blank">
-            @pok&#233;api.co
-          </a>
-        </p>
-      </footer>
     </div>
   );
 }
