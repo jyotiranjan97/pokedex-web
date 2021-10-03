@@ -5,7 +5,7 @@ import { useRouter } from "next/dist/client/router";
 import { fetchPokemonDataByName } from "../../lib/fetchPokemonData";
 import PokeStatsDashBoard from "../../components/PokeStatsDashBoard/PokeStatsDashBoard";
 
-export default function PokemonStatPage({ pokemonData }) {
+export default function PokemonStatPage({ pokemonData, error }) {
   const router = useRouter();
 
   return (
@@ -26,9 +26,11 @@ export default function PokemonStatPage({ pokemonData }) {
       </button>
 
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <div className="text-white">
+        {error ? (
+          <div>Something went wrong, please try again</div>
+        ) : (
           <PokeStatsDashBoard pokeData={pokemonData} />
-        </div>
+        )}
       </main>
 
       <footer className="flex items-center justify-center w-full h-16 border-t">
@@ -53,10 +55,11 @@ interface IParams extends ParsedUrlQuery {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { pokeName } = context.params as IParams;
-  const pokemonData = await fetchPokemonDataByName(pokeName);
+  const { pokemonData, error } = await fetchPokemonDataByName(pokeName);
   return {
     props: {
       pokemonData,
+      error,
     },
   };
 };

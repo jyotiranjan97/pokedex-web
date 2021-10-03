@@ -1,10 +1,13 @@
 import Head from "next/head";
 import { ParsedUrlQuery } from "querystring";
+import NotFoundError from "../../components/Error/NotFoundError";
 import PokeCard from "../../components/Results/Card/PokeCard";
 import SearchBox from "../../components/SearchBox/SearchBox";
 import { fetchPokemonDataByName } from "../../lib/fetchPokemonData";
 
-export default function SearchResultPage({ pokemonData }) {
+export default function SearchResultPage({ pokemonData, error }) {
+  console.log("Error", error);
+
   return (
     <div className="flex flex-col items-center dark:bg-black justify-center min-h-screen py-2">
       <Head>
@@ -14,7 +17,7 @@ export default function SearchResultPage({ pokemonData }) {
 
       <main className="flex flex-col items-center w-full flex-1 px-20 text-center">
         <SearchBox />
-        <PokeCard data={pokemonData} />
+        {error ? <NotFoundError /> : <PokeCard data={pokemonData} />}
       </main>
     </div>
   );
@@ -26,10 +29,11 @@ interface IParams extends ParsedUrlQuery {
 
 export const getServerSideProps = async (context) => {
   const { name } = context.params as IParams;
-  let pokemonData = await fetchPokemonDataByName(name);
+  let { pokemonData, error } = await fetchPokemonDataByName(name);
   return {
     props: {
       pokemonData,
+      error,
     },
   };
 };
