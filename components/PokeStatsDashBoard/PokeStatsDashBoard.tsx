@@ -27,8 +27,8 @@ export default function PokeStatsCard({ pokeData }) {
   const typeOfPokemon = pokeData.type.map((type, index) => (
     <div className="px-6 pt-2 pb-1" key={index}>
       <span
-        className={`inline-block rounded-full px-3 py-1 
-                text-sm tracking-wide font-semibold text-black`}
+        className={`inline-block rounded-full px-3 py-0.5 
+                font-semibold tracking-wide text-black`}
         style={{ backgroundColor: `${COLORS[type]}` }}
       >
         {type}
@@ -39,12 +39,13 @@ export default function PokeStatsCard({ pokeData }) {
   return (
     <div
       className="md:flex rounded-xl p-8 md:bg-gray-800 bg-opacity-20 
-      overflow-hidden md:max-w-screen-lg md:h-96 md:w-screen"
+      overflow-hidden md:max-w-screen-md md:h-96 md:w-screen
+      bg-gradient-to-r from-red-500 via-gray-500 to-gray-900 mb-10"
     >
       {/**Image Container */}
       <div
         className="flex justify-center 
-          md:w-2/6 m-2 bg-gradient-to-r from-white via-blue-300 to-red-300 rounded-full"
+          md:w-2/6 md:h-60 m-2 bg-gradient-to-r from-white via-blue-300 to-green-300 rounded-full"
       >
         <Image src={pokeData.image} height={250} width={250} />
       </div>

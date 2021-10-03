@@ -32,7 +32,7 @@ export default function SearchResultPage({ pokemonData, error }) {
 
         <div className="flex flex-col h-auto w-auto justify-center">
           <button
-            className="bg-red-600 h-14 w-14 rounded-full md:mr-4"
+            className="bg-red-600 hover:bg-red-800 h-14 w-14 rounded-full md:mr-4"
             onClick={() => router.push("/")}
           >
             <Image src={back} height={30} width={30} />

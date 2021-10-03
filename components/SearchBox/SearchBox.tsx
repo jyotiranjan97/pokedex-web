@@ -30,12 +30,13 @@ export default function SearchBox() {
           placeholder="Search"
           value={pokeName}
           onChange={(event) => setPokeName(event.target.value)}
+          required
         />
 
         <div className="p-4">
           <button
             className="bg-red-500 text-white rounded-full p-2 
-            hover:bg-red-300 focus:outline-none w-12 h-12 flex items-center justify-center"
+            hover:bg-red-700 focus:outline-none w-12 h-12 flex items-center justify-center"
             onClick={() => searchPokemon()}
           >
             <Image src={search} />

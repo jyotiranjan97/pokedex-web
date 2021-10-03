@@ -1,5 +1,4 @@
 import { useRouter } from "next/dist/client/router";
-import React from "react";
 
 export default function InternetError() {
   const router = useRouter();

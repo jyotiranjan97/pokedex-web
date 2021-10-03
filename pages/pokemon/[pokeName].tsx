@@ -6,6 +6,7 @@ import { useRouter } from "next/dist/client/router";
 import { fetchPokemonDataByName } from "../../lib/fetchPokemonData";
 import PokeStatsDashBoard from "../../components/PokeStatsDashBoard/PokeStatsDashBoard";
 import back from "../../public/Back.svg";
+import InternetError from "../../components/Error/InternetError";
 
 export default function PokemonStatPage({ pokemonData, error }) {
   const router = useRouter();
@@ -20,20 +21,20 @@ export default function PokemonStatPage({ pokemonData, error }) {
       {/** Back Button */}
       <button
         className="flex flex-row justify-around text-white font-semibold text-xl 
-          self-start mx-3 md:mx-12 md:my-6 my-1 px-4 py-2
-          md:w-40 h-12 bg-red-600 rounded-lg hover:bg-red-900 
+          self-start mx-3 mb-8 md:mx-12 md:my-6 my-1 px-4 py-2
+          md:w-32 h-12 bg-red-600 rounded-lg hover:bg-red-900 
           active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none content-center"
         onClick={() => router.back()}
       >
-        <span className="mr-2">
+        <span>
           <Image src={back} height={30} width={30} />
         </span>
-        <span>go back</span>
+        <span>Back</span>
       </button>
 
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
+      <main className="flex flex-col items-center justify-center md:w-full flex-1 px-8 text-center">
         {error ? (
-          <div>Something went wrong, please try again</div>
+          <InternetError />
         ) : (
           <PokeStatsDashBoard pokeData={pokemonData} />
         )}

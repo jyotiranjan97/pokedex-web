@@ -11,7 +11,8 @@ export default function PokeCard({ data }: Props) {
 
   return (
     <div
-      className="w-56 h-60 p-4 bg-gray-900 hover:bg-opacity-40 m-8 rounded-lg overflow-hidden shadow-lg"
+      className="w-48 border-4 border-purple-900 hover:border-0 h-60 p-4 bg-gray-900 
+        hover:bg-opacity-60 m-8 rounded-lg overflow-hidden shadow-lg"
       onClick={() => router.push(`/pokemon/${data.name}`)}
     >
       <Image
