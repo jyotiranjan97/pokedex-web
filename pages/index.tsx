@@ -3,6 +3,7 @@ import { useRouter } from "next/dist/client/router";
 import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import InternetError from "../components/Error/InternetError";
 import Results from "../components/Results/Results";
 import SearchBox from "../components/SearchBox/SearchBox";
 import { fetchAllPokemons, fetchMorePokemons } from "../lib/fetchAllPokemons";
@@ -52,17 +53,15 @@ export default function Home({ pokemons, error }) {
       </Head>
 
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h2
-          className="text-4xl font-bold tracking-wider text-white mb-5"
-          onClick={() => router.push("/")}
-        >
+        <h2 className="text-4xl font-bold tracking-wider text-white mb-5">
           Pok&#233;dex
         </h2>
-        <SearchBox />
+        {console.log(error)}
         {error ? (
-          <div>Something went wrong, please try again after sometime</div>
+          <InternetError />
         ) : (
           <>
+            <SearchBox />
             {/** Results */}
             <Results pokemons={allPokemons} />
             {/** Load More Button */}
