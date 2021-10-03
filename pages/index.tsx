@@ -1,6 +1,6 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import { useState } from "react";
+import React, { useState } from "react";
 import InternetError from "../components/Error/ServerError";
 import Results from "../components/Results/Results";
 import ScrollToTop from "../components/Scroll/ScrollToTop";
@@ -14,7 +14,7 @@ export default function Home({ pokemons, error }) {
   const loadMorePokemons = async () => {
     const newOffset = offset + 20;
     console.log(newOffset);
-    const newPokemons = await fetchMorePokemons(newOffset);
+    const { newPokemons, error } = await fetchMorePokemons(newOffset);
     setOffset(newOffset);
     setAllPokemons((pokemons) => [...pokemons, ...newPokemons]);
   };
@@ -42,8 +42,8 @@ export default function Home({ pokemons, error }) {
             <button
               type="button"
               onClick={() => loadMorePokemons()}
-              className="text-white px-4 py-2 my-3 text-md rounded-md bg-red-500 hover:bg-red-800
-            font-semibold tracking-wide"
+              className="text-white px-4 py-2 my-3 text-md rounded-md 
+                  bg-red-500 hover:bg-red-800 font-semibold tracking-wide"
             >
               Load More
             </button>
@@ -58,7 +58,6 @@ export default function Home({ pokemons, error }) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const { pokemons, error } = await fetchAllPokemons();
-  console.log(error);
   return {
     props: {
       pokemons,
