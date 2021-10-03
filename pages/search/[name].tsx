@@ -48,6 +48,7 @@ export default function SearchResultPage({ pokemonData, error }) {
             href="https://pokeapi.co/"
             className="text-red-300"
             target="_blank"
+            rel="noopener noreferrer"
           >
             @pok&#233;api.co
           </a>
