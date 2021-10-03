@@ -1,16 +1,13 @@
 import { GetStaticProps } from "next";
-import { useRouter } from "next/dist/client/router";
 import Head from "next/head";
 import { useState } from "react";
-import InternetError from "../components/Error/InternetError";
+import InternetError from "../components/Error/ServerError";
 import Results from "../components/Results/Results";
 import ScrollToTop from "../components/Scroll/ScrollToTop";
 import SearchBox from "../components/SearchBox/SearchBox";
 import { fetchAllPokemons, fetchMorePokemons } from "../lib/fetchAllPokemons";
 
 export default function Home({ pokemons, error }) {
-  const router = useRouter();
-
   const [allPokemons, setAllPokemons] = useState(pokemons);
   const [offset, setOffset] = useState(1);
 

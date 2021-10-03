@@ -6,7 +6,7 @@ import { useRouter } from "next/dist/client/router";
 import { fetchPokemonDataByName } from "../../lib/fetchPokemonData";
 import PokeStatsDashBoard from "../../components/PokeStatsDashBoard/PokeStatsDashBoard";
 import back from "../../public/Back.svg";
-import InternetError from "../../components/Error/InternetError";
+import InternetError from "../../components/Error/ServerError";
 
 export default function PokemonStatPage({ pokemonData, error }) {
   const router = useRouter();

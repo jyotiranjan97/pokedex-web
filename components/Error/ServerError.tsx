@@ -6,8 +6,8 @@ export default function InternetError() {
   return (
     <div>
       <div className="flex flex-col text-white text-3xl mt-20">
-        <span className="mb-5">Connect to the Internet You're offline.</span>
-        <span>Check your connection.</span>
+        <span className="mb-5">Something went wrong.</span>
+        <span>Try again after sometime.</span>
       </div>
       <button
         className="box-border bg-red-500 hover:bg-red-700 
