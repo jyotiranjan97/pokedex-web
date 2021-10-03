@@ -17,7 +17,6 @@ export default function SearchBox() {
 
   return (
     <form
-      className="p-8"
       onSubmit={(event) => {
         event.preventDefault();
         searchPokemon();

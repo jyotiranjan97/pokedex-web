@@ -1,4 +1,5 @@
 import { GetStaticProps } from "next";
+import { useRouter } from "next/dist/client/router";
 import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -8,6 +9,8 @@ import { fetchAllPokemons, fetchMorePokemons } from "../lib/fetchAllPokemons";
 import scroll from "../public/Scroll.svg";
 
 export default function Home({ pokemons, error }) {
+  const router = useRouter();
+
   const [allPokemons, setAllPokemons] = useState(pokemons);
   const [offset, setOffset] = useState(1);
   const [isButtonVisible, setIsButtonVisible] = useState(false);
@@ -49,7 +52,10 @@ export default function Home({ pokemons, error }) {
       </Head>
 
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h2 className="text-4xl font-bold tracking-wider text-gray-900 dark:text-white">
+        <h2
+          className="text-4xl font-bold tracking-wider text-gray-900 dark:text-white mb-5"
+          onClick={() => router.push("/")}
+        >
           Pok&#233;dex
         </h2>
         <SearchBox />
