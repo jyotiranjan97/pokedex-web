@@ -12,7 +12,7 @@ export default function SearchResultPage({ pokemonData, error }) {
   const router = useRouter();
 
   return (
-    <div className="flex flex-col items-center dark:bg-black justify-center min-h-screen py-2">
+    <div className="flex flex-col items-center bg-black justify-center min-h-screen py-2">
       <Head>
         <title>Search</title>
         <link rel="icon" href="/favicon.ico" />
@@ -20,7 +20,7 @@ export default function SearchResultPage({ pokemonData, error }) {
 
       <main className="flex flex-col items-center w-full flex-1 px-20 text-center">
         <h2
-          className="text-4xl font-bold tracking-wider text-gray-900 dark:text-white mb-5"
+          className="text-4xl font-bold tracking-wider text-white mb-5"
           onClick={() => router.push("/")}
         >
           Pok&#233;dex
@@ -41,7 +41,7 @@ export default function SearchResultPage({ pokemonData, error }) {
       </main>
 
       <footer className="flex items-center justify-center w-full h-16 border-t">
-        <p className="text-sm tracking-wider font-semibold text-gray-700 dark:text-white">
+        <p className="text-sm tracking-wider font-semibold text-gray-700">
           All rights reserved by{" "}
           <a
             href="https://pokeapi.co/"

@@ -11,7 +11,7 @@ export default function PokemonStatPage({ pokemonData, error }) {
   const router = useRouter();
 
   return (
-    <div className="flex flex-col dark:bg-black min-h-screen py-2">
+    <div className="flex flex-col bg-black min-h-screen py-2">
       <Head>
         <title>Stats - Pokemon</title>
         <link rel="icon" href="/favicon.ico" />
@@ -40,7 +40,7 @@ export default function PokemonStatPage({ pokemonData, error }) {
       </main>
 
       <footer className="flex items-center justify-center w-full h-16 border-t">
-        <p className="text-sm tracking-wider font-semibold text-gray-700 dark:text-white">
+        <p className="text-sm tracking-wider font-semibold text-white">
           All rights reserved by{" "}
           <a
             href="https://pokeapi.co/"

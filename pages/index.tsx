@@ -45,7 +45,7 @@ export default function Home({ pokemons, error }) {
   };
 
   return (
-    <div className="flex flex-col items-center dark:bg-black justify-center min-h-screen py-2">
+    <div className="flex flex-col items-center bg-black justify-center min-h-screen py-2">
       <Head>
         <title>Pok&#233;dex</title>
         <link rel="icon" href="/favicon.ico" />
@@ -53,7 +53,7 @@ export default function Home({ pokemons, error }) {
 
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
         <h2
-          className="text-4xl font-bold tracking-wider text-gray-900 dark:text-white mb-5"
+          className="text-4xl font-bold tracking-wider text-white mb-5"
           onClick={() => router.push("/")}
         >
           Pok&#233;dex

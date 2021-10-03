@@ -7,28 +7,29 @@ import Height from "../../public/Height.svg";
 import Weight from "../../public/Weight.svg";
 
 export const COLORS = {
-  bug: "yellow-200",
-  dragon: "yellow-500",
-  electric: "yellow-300",
-  fairy: "pink-400",
-  fighting: "indigo-700",
-  fire: "red-400",
-  flying: "indigo-400",
-  ground: "yellow-700",
-  grass: "green-400",
+  bug: "#f8d5a3",
+  dragon: "#97b3e6",
+  electric: "#fcf7de",
+  fairy: "#fceaff",
+  fighting: "#e6e0da",
+  fire: "#fddfdf",
+  flying: "#f5f5f5",
+  ground: "#f4e7da",
+  grass: "#defde0",
   normal: "white",
-  poison: "purple-500",
-  psychic: "pink-300",
-  rock: "gray-500",
-  water: "blue-300",
+  poison: "#98d7a5",
+  psychic: "#eaeda1",
+  rock: "#d5d5d4",
+  water: "#def3fd",
 };
 
 export default function PokeStatsCard({ pokeData }) {
   const typeOfPokemon = pokeData.type.map((type, index) => (
     <div className="px-6 pt-2 pb-1" key={index}>
       <span
-        className={`inline-block bg-${COLORS[type]} rounded-full px-3 py-1 
+        className={`inline-block rounded-full px-3 py-1 
                 text-sm tracking-wide font-semibold text-black`}
+        style={{ backgroundColor: `${COLORS[type]}` }}
       >
         {type}
       </span>
@@ -41,13 +42,19 @@ export default function PokeStatsCard({ pokeData }) {
       overflow-hidden md:max-w-screen-lg md:h-96 md:w-screen"
     >
       {/**Image Container */}
-      <div className="md:w-2/6 m-2">
+      <div
+        className="flex justify-center 
+          md:w-2/6 m-2 bg-gradient-to-r from-white via-blue-300 to-red-300 rounded-full"
+      >
         <Image src={pokeData.image} height={250} width={250} />
       </div>
       {/**Stats Container */}
       <div className="md:w-4/6 m-2">
         {/** Pokemon Name */}
-        <h5 className={`text-${COLORS[pokeData.type[0]]} text-3xl font-mono`}>
+        <h5
+          className={`text-3xl font-mono`}
+          style={{ color: `${COLORS[pokeData.type[0]]}` }}
+        >
           {pokeData.name.charAt(0).toUpperCase() + pokeData.name.slice(1)}
         </h5>
         {/**Falling Types */}
