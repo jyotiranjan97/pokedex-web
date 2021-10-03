@@ -27,10 +27,10 @@ export default function ScrollToTop() {
   }, []);
 
   return (
-    <div className="fixed bottom-3 bg-red-600 rounded-lg h-12 hover:bg-red-800 right-5 cursor-pointer">
+    <div className="fixed text-white text-sm bottom-3 bg-red-600 rounded-lg h-12 hover:bg-red-800 right-5 cursor-pointer">
       {isButtonVisible && (
         <div onClick={scrollToTop}>
-          <Image src={scroll} height={40} width={50} />
+          <Image src={scroll} alt="Top" height={40} width={50} />
         </div>
       )}
     </div>

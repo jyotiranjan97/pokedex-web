@@ -16,6 +16,7 @@ export default function SearchResultPage({ pokemonData, error }) {
       <Head>
         <title>Search</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Pokemon searched by Name" />
       </Head>
 
       <main className="flex flex-col items-center w-full flex-1 px-20 text-center">
@@ -35,7 +36,7 @@ export default function SearchResultPage({ pokemonData, error }) {
             className="bg-red-600 hover:bg-red-800 h-14 w-14 rounded-full md:mr-4"
             onClick={() => router.push("/")}
           >
-            <Image src={back} height={30} width={30} />
+            <Image src={back} alt="Back" height={30} width={30} />
           </button>
         </div>
       </main>

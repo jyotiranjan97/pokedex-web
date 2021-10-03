@@ -39,7 +39,7 @@ export default function SearchBox() {
             hover:bg-red-700 focus:outline-none w-12 h-12 flex items-center justify-center"
             onClick={() => searchPokemon()}
           >
-            <Image src={search} />
+            <Image src={search} alt="Find" />
           </button>
         </div>
       </div>

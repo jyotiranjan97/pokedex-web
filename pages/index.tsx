@@ -23,6 +23,7 @@ export default function Home({ pokemons, error }) {
     <div className="flex flex-col items-center bg-black justify-center min-h-screen py-2">
       <Head>
         <title>Pok&#233;dex</title>
+        <meta name="description" content="All Pokemons from Pokeapi" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

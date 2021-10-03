@@ -16,6 +16,7 @@ export default function PokemonStatPage({ pokemonData, error }) {
       <Head>
         <title>Stats - Pokemon</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Pokemon details from API" />
       </Head>
 
       {/** Back Button */}
@@ -27,7 +28,7 @@ export default function PokemonStatPage({ pokemonData, error }) {
         onClick={() => router.back()}
       >
         <span>
-          <Image src={back} height={30} width={30} />
+          <Image src={back} alt="" height={30} width={30} />
         </span>
         <span>Back</span>
       </button>

@@ -47,7 +47,12 @@ export default function PokeStatsCard({ pokeData }) {
         className="flex justify-center 
           md:w-2/6 md:h-60 m-2 bg-gradient-to-r from-white via-blue-300 to-green-300 rounded-full"
       >
-        <Image src={pokeData.image} height={250} width={250} />
+        <Image
+          src={pokeData.image}
+          alt="😟Can't Load the Image"
+          height={250}
+          width={250}
+        />
       </div>
       {/**Stats Container */}
       <div className="md:w-4/6 m-2">
@@ -69,7 +74,7 @@ export default function PokeStatsCard({ pokeData }) {
             <div className="flex justify-between w-40 my-1">
               <span className="flex w-20">
                 <span className="flex">
-                  <Image src={Height} height={35} width={35} />
+                  <Image src={Height} alt="" height={35} width={35} />
                 </span>
                 <span className="font-semibold text-lg text-white">Height</span>
               </span>
@@ -81,7 +86,7 @@ export default function PokeStatsCard({ pokeData }) {
             <div className="flex justify-between md:w-40 my-1">
               <span className="flex w-24">
                 <span className="flex mx-0.5">
-                  <Image src={Weight} height={20} width={20} />
+                  <Image src={Weight} alt="" height={20} width={20} />
                 </span>
                 <span className="font-semibold text-lg text-white">Weight</span>
               </span>
@@ -98,7 +103,7 @@ export default function PokeStatsCard({ pokeData }) {
             <div className="flex justify-between w-40 my-1">
               <span className="flex w-20">
                 <span className="flex mx-1">
-                  <Image src={Health} height={20} width={20} />
+                  <Image src={Health} alt="" height={20} width={20} />
                 </span>
                 <span className="font-semibold text-lg text-white">HP</span>
               </span>
@@ -110,7 +115,7 @@ export default function PokeStatsCard({ pokeData }) {
             <div className="flex justify-between w-40 my-1">
               <span className="flex w-20">
                 <span className="flex mx-1">
-                  <Image src={Attack} height={20} width={20} />
+                  <Image src={Attack} alt="" height={20} width={20} />
                 </span>
                 <span className="font-semibold text-lg text-white">Attack</span>
               </span>
@@ -122,7 +127,7 @@ export default function PokeStatsCard({ pokeData }) {
             <div className="flex justify-between w-40 my-1 ">
               <span className="flex w-28">
                 <span className="flex mx-1">
-                  <Image src={Defense} height={20} width={20} />
+                  <Image src={Defense} alt="" height={20} width={20} />
                 </span>
                 <span className="font-semibold text-lg text-white">
                   Defense
@@ -136,7 +141,7 @@ export default function PokeStatsCard({ pokeData }) {
             <div className="flex justify-between w-40 my-1">
               <span className="flex w-20">
                 <span className="flex mx-1">
-                  <Image src={Speed} height={20} width={20} />
+                  <Image src={Speed} alt="" height={20} width={20} />
                 </span>
                 <span className="font-semibold text-lg text-white">Speed</span>
               </span>
