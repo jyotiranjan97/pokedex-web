@@ -1,7 +1,29 @@
-# Pokedex
+## Pokedex
 
-- This is a NEXT.JS application
+**This is your friendly pokedex website to check-out all the pokemons available**
 
-- Using pokeapi.co
+Here is the [link](https://pokedex-web-one.vercel.app/). Go and Enjoy.
 
-_created on_ - 01 Oct 2021
+### Features
+
+1. Get all the pokemons on the go.
+2. Search by name of the pokemon.
+3. Know there stats and their attributes.
+
+---
+
+### Tech Stack Used
+
+- Next JS
+- Tailwind CSS
+
+---
+
+### Extras
+
+- Data fetched from [pokeapi.co](https://pokeapi.co)
+- Cached api data to minimize calls
+- Improved SEO
+- Attractive UI
+
+**created on - 1st Oct 2021**
