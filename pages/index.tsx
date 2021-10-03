@@ -13,7 +13,6 @@ export default function Home({ pokemons, error }) {
 
   const loadMorePokemons = async () => {
     const newOffset = offset + 20;
-    console.log(newOffset);
     const { newPokemons, error } = await fetchMorePokemons(newOffset);
     setOffset(newOffset);
     setAllPokemons((pokemons) => [...pokemons, ...newPokemons]);
@@ -31,7 +30,6 @@ export default function Home({ pokemons, error }) {
         <h2 className="text-4xl font-bold tracking-wider text-white mb-5">
           Pok&#233;dex
         </h2>
-        {console.log(error)}
         {error ? (
           <InternetError />
         ) : (
